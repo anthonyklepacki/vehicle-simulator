@@ -1,21 +1,43 @@
 // VehicleSim.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "pch.h"
-#include <iostream>
 
+#include <iostream>
+#include <cmath>
+#include "vehicle.h"
+
+
+
+
+
+// Example drawing the interference pattern of light
+// falling on a grid with n slits and ratio r of slit
+// width over distance between slits.
+
+
+
+
+
+// This is the main program
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	float dt = 0.01;
+	float distance = 0;
+	float maxDistance = 100;
+
+	vehicle *racecar = new vehicle;
+	racecar->mass = 400;
+	racecar->acceleration = 1;
+	
+	while (distance < maxDistance) {
+		racecar->speed += dt * racecar->acceleration;
+		distance += racecar->speed*dt;
+		racecar->report_params();
+	}
+
+
+	std::cin;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
