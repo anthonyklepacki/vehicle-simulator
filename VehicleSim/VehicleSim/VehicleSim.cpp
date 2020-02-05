@@ -27,10 +27,11 @@ int main()
 
 	vehicle *racecar = new vehicle;
 	racecar->mass = 400;
-	racecar->acceleration = 1;
+	racecar->acceleration = 0.0;
+	racecar->eng->throttlePosition = 1.0;
 	
 	while (distance < maxDistance) {
-		racecar->speed += dt * racecar->acceleration;
+		racecar->update(dt);
 		distance += racecar->speed*dt;
 		racecar->report_params();
 	}

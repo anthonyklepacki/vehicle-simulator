@@ -23,5 +23,11 @@
     <ClInclude Include="vehicle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wheel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
